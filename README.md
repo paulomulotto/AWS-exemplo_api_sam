@@ -44,6 +44,7 @@ Digite <b>2</b> para selecionar <b>Custom Template Location</b> e depois <b>1</b
 
 <h3>Rodando o projeto localmente</h3>
 Instale as dependências:
+
 ```
 cd ~/environment/sam-api-app/api_basica
 pip3 install -r requirements.txt
