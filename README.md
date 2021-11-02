@@ -18,6 +18,9 @@ Este repositório contém os passos e os códigos necessários para obtenção d
 ![Desenho arquitetura](https://github.com/paulomulotto/AWS-exemplo_api_sam/blob/main/img/arquitetura%20basica.png)
 
 <h2>Tutorial</h2>
+
+Você pode realizar sem utilizar o Cloud9, porém fica a seu cargo realizar as configurações de comunicação com a conta da AWS e as dependências.
+
 <h3>Criando e configurando workspace AWS Cloud9</h3>
 Vá até o <a href="https://console.aws.amazon.com/cloud9">console do Cloud9 da AWS</a> e crie um workspace.
 
@@ -101,3 +104,13 @@ sam deploy --guided
 
 
 Confirme o deploy digitando <b>y</b>. 
+
+
+
+<h3>Verificando e testando o deploy</h3>
+
+Abra o <a href="https://console.aws.amazon.com/cloudformation/home">console do CloudFormation</a> (garanta que você está na mesma região que você estava trabalhando até agora). Você deve ver o stack sam-api-app com o status CREATE_COMPLETE.
+
+Abra o stack na sequência a sessão de Outputs. Procure pela chave OlaMundoApi. Ela irá conter o valor da URL que o nosso template SAM exportou no output. 
+
+Abra a URL e veja se retorna a mesma mensagem que retornou localmente anteriormente.
