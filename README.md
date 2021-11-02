@@ -50,9 +50,54 @@ cd ~/environment/sam-api-app/api_basica
 pip3 install -r requirements.txt
 ```
 
-Rode o projeto usando o SAM CLI
+Rode o projeto usando o SAM CLI <i>(pode levar alguns minutos)</i>:
 ```
 cd ~/environment/sam-api-app
 sam local start-api --port 8080
+```
+
+Abra um novo terminal e teste seu endpoint utilizando o comando CURL 
 
 ```
+curl http://localhost:8080/ola
+```
+
+A resposta deverá ser <i>"{"message": "Ola Mundo!"}"</i>
+
+<h3>Deploy AWS</h3>
+Agora com a API testada localmente, vamos realizar o deploy na AWS através do terminal. Para isso vamos validar o template, realizar o build e na sequência o deploy. <br>
+
+Comece executando a validação:
+
+```
+sam validate
+```
+
+O retorno esperado deve conter algo como <i>...sam-api-app/template.yaml is a valid SAM Template</i>
+
+Agora vamos realizar o build:
+```
+sam build
+```
+
+E finalmente o deploy
+```
+sam deploy --guided
+```
+
+1 - Para Stack Name digite sam-api-app. 
+
+2 - Escolha a região atual do cloud9.
+
+3 - Confirme as mudanças antes de realizar o deploy digitando <b>y</b>.
+
+4 - Permita a crição da IAM Role digitando <b>y</b> e <b>y</b> em sequência.
+
+5 - Salve os argumentos em arquivo de configuração para não ser necessário dar as mesmas respostas em um próximo deploy digitando <b>y</b>
+
+6 - Apenas de enter para as instruções seguintes
+
+
+
+
+Confirme o deploy digitando <b>y</b>. 
