@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-api-app
+
+  Template para criação de API básica utilizando SAM
+
+Resources:
+  OlaMundoFunc:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: api_basica/
+      Handler: app.lambda_handler
+      Runtime: python3.7
+      Events:
+        OlaMundo:
+          Type: Api
+          Properties:
+            Path: /ola
+            Method: get
+
+Outputs:
+  OlaMundoApi:
+    Description: "URL do API Gateway endpoint"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+  OlaMundoFunc:
+    Description: "Ola Mundo Func ARN"
+    Value: !GetAtt OlaMundoFunc.Arn
+  OlaMundoFuncIamRole:
+    Description: "IAM Role implicita criada pela função OlaMundo"
+    Value: !GetAtt OlaMundoFuncRole.Arn
