@@ -40,8 +40,18 @@ Execute o comando e siga as instruções
 sam init
 ```
 
-Digite <b>1</b> para selecionar <b>WS Quick Start Templates</b> e depois <b>1</b> para selecionar <b>ZIP</b> como o tipo de pacote.
+Digite <b>2</b> para selecionar <b>Custom Template Location</b> e depois <b>1</b> insira o caminho do GitHub <a href="https://github.com/paulomulotto/AWS-exemplo_api_sam">https://github.com/paulomulotto/AWS-exemplo_api_sam</a>
 
-Escola python3.7 para runtime.
+<h3>Rodando o projeto localmente</h3>
+Instale as dependências:
+```
+cd ~/environment/sam-api-app/api_basica
+pip3 install -r requirements.txt
+```
 
-Deixe o default <b>sam-app</b> para o nome do projeto e selecione <b>1</b> para <b>Hello World Example</b>
+Rode o projeto usando o SAM CLI
+```
+cd ~/environment/sam-api-app
+sam local start-api --port 8080
+
+```
