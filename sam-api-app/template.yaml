@@ -22,7 +22,7 @@ Resources:
 Outputs:
   OlaMundoApi:
     Description: "URL do API Gateway endpoint"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/ola/"
   OlaMundoFunc:
     Description: "Ola Mundo Func ARN"
     Value: !GetAtt OlaMundoFunc.Arn
